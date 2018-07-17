@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -36,4 +38,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    /*
+    public function telefono()
+    {
+        $loginType = request()->input('telefono');
+
+        $this->telefono = filter_var($loginType, FILTER_VALIDATE_EMAIL) ? 'email' : 'telefono';
+        request()->merge([$this->telefono => $loginType]);
+
+        return property_exists($this, 'telefono') ? $this->telefono : 'email';
+    }
+    */
 }
