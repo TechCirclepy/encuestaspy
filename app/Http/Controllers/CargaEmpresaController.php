@@ -7,7 +7,10 @@ use App\User;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\EmpresaFormRequest;
 class CargaEmpresaController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
