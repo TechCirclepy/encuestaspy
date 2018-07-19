@@ -16,10 +16,11 @@ class CargaEmpresaController extends Controller
     public function index(Request $request)
     {
         //
-        $query=trim($request->get('searchText'));
-        $empresas = User::where('nivel', '=', '1')->where('name','LIKE','%'.$query.'%')->orderBy('id','desc')->paginate(4);
-        return view('admin.empresa.index', compact('empresas','query'));
-        
+        if ($request){
+            $query=trim($request->get('searchText'));
+            $empresas = User::where('nivel', '=', '1')->where('name','LIKE','%'.$query.'%')->orderBy('id','desc')->paginate(4);
+            return view('admin.empresa.index', ['empresas' => $empresas, "searchText"=>$query]);
+        }
     }
 
     /**

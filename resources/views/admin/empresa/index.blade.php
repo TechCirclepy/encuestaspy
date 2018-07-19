@@ -35,10 +35,10 @@
           @endif
         </td>
       </tr>
+      @include('admin.empresa.modal')
       @endforeach
     </tbody>
   </table>
   {{ $empresas->links() }}
-  @include('admin.empresa.modal')
 </div>
 @endsection
