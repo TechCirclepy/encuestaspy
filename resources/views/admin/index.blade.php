@@ -8,7 +8,7 @@
 	            <div class="thumbnail">
 	                <img src="http://placehold.it/320x150" alt="">
 	                <div class="caption">
-	                    <h4><a href="#">Empresas</a>
+	                    <h4><a href="{{ url('/empresas') }}">Empresas</a>
 	                    </h4>
 	                    <p>Administra las empresas</p>
 	                </div>
