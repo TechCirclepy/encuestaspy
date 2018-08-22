@@ -1,41 +1,61 @@
-$(document).ready(function(){
-	$('.oculto4').hide();
-	$('.oculto5').hide();
-	$('.oculto6').hide();
-	$('.oculto7').hide();
-	$('.oculto8').hide();
-	$('.oculto9').hide();
-	$('.oculto10').hide();
-	$('.oculto').hide();
-	$("#abrir").on( "click", function() {
-		$('.oculto').show();
-		$('#abrir').attr('id', 'abrir4');
-		$("#abrir4").on( "click", function() {
-				$('.oculto4').show();
-				$('#abrir4').attr('id', 'abrir5');
-				$("#abrir5").on( "click", function() {
-						$('.oculto5').show();
-						$('#abrir5').attr('id', 'abrir6');
-						$("#abrir6").on( "click", function() {
-								$('.oculto6').show();
-								$('#abrir6').attr('id', 'abrir7');
-								$("#abrir7").on( "click", function() {
-										$('.oculto7').show();
-										$('#abrir7').attr('id', 'abrir8');
-										$("#abrir8").on( "click", function() {
-												$('.oculto8').show();
-												$('#abrir8').attr('id', 'abrir9');
-												$("#abrir9").on( "click", function() {
-														$('.oculto9').show();
-														$('#abrir9').attr('id', 'abrir10');
-														$("#abrir10").on( "click", function() {
-															$('.oculto10').show();
-													});
-												});
-										});
-								});
-						});
-				});
-		});
+function addPregunta(e) {
+	var pregunta = $(
+		'<div class="form-inline clase_'+e+'">'+
+			'<label for="opcion1">Opcion o respuesta</label><br>'+
+			'<label for="imagen'+e+'">'+
+				'<img id="imgSalida_'+e+'" src="https://cdn.pixabay.com/'+
+				'photo/2017/06/06/00/33/edit-icon-2375785_640.png"'+
+				'width="25" height="25"/>'+
+			'</label>'+
+			'<input id="'+e+'" type="text" name="opcion'+e+'"'+
+			'class="form-control" placeholder="Respuesta"  required />' +
+			'<input name="imagen'+e+'" id="imagen'+e+'" type="file"'+
+			'style="display: none;" />'+
+		'</div>'
+		);
+	$(".contenedor").append(pregunta);
+}
+
+function addImagen(e) {
+  $(function() {
+  $('#imagen'+e+'').change(function(x) {
+      addImage(x); 
+     });
+     function addImage(x){
+      var file = x.target.files[0],
+      imageType = /image.*/;
+    
+      if (!file.type.match(imageType))
+       return;
+  
+      var reader = new FileReader();
+      reader.onload = fileOnload;
+      reader.readAsDataURL(file);
+     }
+     function fileOnload(x) {
+      var result=x.target.result;
+      $('#imgSalida_'+e+'').attr("src",result);
+     }
+    });
+}
+
+e++;
+$(document).ready(function() {
+	$('#abrir').click(function () {
+		if (e >= 10) {
+			alert('Solo puede agregar 10 respuestas')
+		} else {
+	    	e++;
+	    }
 	});
+	$('#ocultar').click(function () {
+		if (e < 2) {
+			alert('La pregunta debe tener al menos una respuesta')
+		} else {
+			e--;
+			var dato = '.clase_'+e;
+			console.log(dato);
+			$(".clase_"+e).remove();
+		}
+	}); 
 });

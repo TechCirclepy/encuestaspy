@@ -9,12 +9,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-     
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Styles
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
     <div id="app">
@@ -78,8 +76,10 @@
     </div>
 
     <!-- Scripts -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('js/botonencuesta.js') }}"></script>
+    <script src="{{ asset('js/preview.js') }}"></script>
 </body>
 </html>

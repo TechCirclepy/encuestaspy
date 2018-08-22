@@ -41,7 +41,6 @@
 		            </div>
 	            </a>
             </div>
-
         </div>
         <style>
         	.col-md-6 {
