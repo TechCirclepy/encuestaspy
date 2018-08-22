@@ -13,7 +13,19 @@ function addPregunta(e) {
 			'style="display: none;" />'+
 		'</div>'
 		);
-	$(".contenedor").append(pregunta);
+	var preview = $(
+		'<br>'+
+		'<strong id="pregunta"></strong>'+
+			'<br>'+
+			'<label class="checkbox-inline"><input type="radio" value="1">SI</label>'+
+			'<label class="checkbox-inline"><input type="radio" value="0">NO</label>'
+		);
+	if (e >= 10 ){
+
+	} else {
+		$(".contenedor").append(pregunta);
+		$("#respuestas").append(preview);
+	}
 }
 
 function addImagen(e) {

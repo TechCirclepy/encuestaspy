@@ -81,5 +81,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('js/botonencuesta.js') }}"></script>
     <script src="{{ asset('js/preview.js') }}"></script>
+    <script src="{{ asset('js/previzualizacion.js') }}"></script>
 </body>
 </html>

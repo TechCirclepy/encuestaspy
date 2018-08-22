@@ -20,7 +20,7 @@
 			<label for="imagen1">
 				<img id="imgSalida" src="https://cdn.pixabay.com/photo/2017/06/06/00/33/edit-icon-2375785_640.png" width="25" height="25"/>
 			</label>
-			<input type="text" name="opcion1" class="form-control" placeholder="Respuesta"  required/>
+			<input type="text" name="opcion1" id="opcion1" class="form-control" placeholder="Respuesta"  required/>
 			<input name="imagen1" id="imagen1" type="file" style="display: none;" />
 		</div>
 
