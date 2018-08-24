@@ -18,7 +18,7 @@
 	  	<div class="form-inline">
 			<label for="opcion1">Opcion o respuesta</label><br>
 			<label for="imagen1">
-				<img id="imgSalida" src="https://cdn.pixabay.com/photo/2017/06/06/00/33/edit-icon-2375785_640.png" width="25" height="25"/>
+				<img id="imgSalida" src="https://openclipart.org/image/2400px/svg_to_png/190958/1392495957.png" width="25" height="25"/>
 			</label>
 			<input type="text" name="opcion1" id="opcion1" class="form-control" placeholder="Respuesta"  required/>
 			<input name="imagen1" id="imagen1" type="file" style="display: none;" />

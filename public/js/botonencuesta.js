@@ -4,8 +4,8 @@ function addPregunta(e) {
 		'<div class="form-inline clase_'+e+'">'+
 			'<label for="opcion1">Opcion o respuesta</label><br>'+
 			'<label for="imagen'+e+'">'+
-				'<img id="imgSalida_'+e+'" src="https://cdn.pixabay.com/'+
-				'photo/2017/06/06/00/33/edit-icon-2375785_640.png"'+
+				'<img id="imgSalida_'+e+'" src="https://openclipart.org/image/2400px/'+
+				'svg_to_png/190958/1392495957.png"'+
 				'width="25" height="25"/>'+
 			'</label>'+
 			'<input id="opcion'+e+'" type="text" name="opcion'+e+'"'+
@@ -18,10 +18,14 @@ function addPregunta(e) {
 	var preview = $(
 		'<div id="check'+e+'">'+
 			'<br>'+
-			'<strong id="pregunta'+e+'"></strong>'+
-				'<br>'+
-				'<label class="checkbox-inline"><input type="radio" value="1">SI</label>'+
-				'<label class="checkbox-inline"><input type="radio" value="0">NO</label>'+
+			'<label class="checkbox-inline">'+
+				'<img id="foto'+e+'" src="https://openclipart.org/image/2400px/'+
+				'svg_to_png/190958/1392495957.png" width="25" height="25">'+
+				'<strong id="pregunta'+e+'"></strong>'+
+			'</label>'+
+			'<br>'+
+			'<label class="checkbox-inline"><input type="radio" value="1">SI</label>'+
+			'<label class="checkbox-inline"><input type="radio" value="0">NO</label>'+
 		'</div>'
 		);
 	if (e >= 10 ){
@@ -51,6 +55,7 @@ function addImagen(e) {
      function fileOnload(x) {
       var result=x.target.result;
       $('#imgSalida_'+e+'').attr("src",result);
+      $('#foto'+e+'').attr("src",result);
      }
     });
 }

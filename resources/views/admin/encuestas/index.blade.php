@@ -12,13 +12,13 @@
 <div class="container">
 	<div class="row">
             <div class="col-md-4">
-            <a href="{{url('crear-encuesta/create')}}">
+            <a data-toggle="modal" data-target="#encuestaModal">
                 <div class="thumbnail">
 	                <img src="https://www.academiabb.com/wp-content/uploads/2016/03/Encuesta-Busy-Bee-clases-de-ingl%C3%A9s-Las-Palmas.png" alt="">
 	                <div class="caption text-center">
-		                    <h4><a href="{{url('crear-encuesta/create')}}">Realizar Encuesta</a>
+		                    <h4><a data-toggle="modal" data-target="#encuestaModal">Realizar Encuesta</a>
 		                    </h4>
-		                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Encuestas</button>
+		          
 	                    <p>Publica nuevas encuestas</p>
 	                </div>
 	            </div>
@@ -61,7 +61,7 @@
 </div>
 @endif
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="encuestaModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -71,13 +71,13 @@
       </div>
       <div class="modal-body">
       	<div class="col-md-4">
-	      	<a href="" class="text-center">
+	      	<a href="{{url('crear-encuesta/create')}}" class="text-center">
 	      		<img width="100" height="80" src="https://www.bostonmedicalgroup.es/wp-content/uploads/2016/02/encuestaBMG-2.png" alt="">
 	      		<h5>Encuesta Cerrada</h5>
 	      	</a>
       	</div>
       	<div class="col-md-4">
-      		<a href="{{url('crear-encuesta/create')}}" class="text-center">
+      		<a href="#" class="text-center">
 	      		<img width="100" height="80" src="https://www.bostonmedicalgroup.es/wp-content/uploads/2016/02/encuestaBMG-2.png" alt="">
 	      		<h5>Encuesta Abierta</h5>
       		</a>

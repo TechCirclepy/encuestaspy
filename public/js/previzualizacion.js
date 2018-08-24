@@ -1,3 +1,4 @@
+
 //revizualizacion a optimizar
 $(document).on('change keyup', '#titulo', function(e){
     $('#resultado').html( $(this).val() );

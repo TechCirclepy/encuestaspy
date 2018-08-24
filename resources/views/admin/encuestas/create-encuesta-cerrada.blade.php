@@ -11,7 +11,10 @@
 		<h1 class="text-center" id="resultado"></h1>
 		<h6>Encuesta valida hasta: <b id="resultado_fecha"></b></h6>
 		<div id="respuestas">
-			<strong id="pregunta1"></strong>
+			<label class="checkbox-inline">
+				<img id="foto1" src="https://openclipart.org/image/2400px/svg_to_png/190958/1392495957.png" width="25" height="25">
+				<strong id="pregunta1"></strong>
+			</label>
 			<br>
 			<label class="checkbox-inline"><input type="radio" value="1">SI</label>
 			<label class="checkbox-inline"><input type="radio" value="0">NO</label>

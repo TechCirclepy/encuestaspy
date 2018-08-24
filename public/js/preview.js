@@ -20,6 +20,7 @@ $(document).ready(function(){
      function fileOnload(x) {
       var result=x.target.result;
       $('#imgSalida').attr("src",result);
+      $('#foto1').attr("src",result);
      }
   });
 });

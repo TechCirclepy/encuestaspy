@@ -28,7 +28,7 @@ class RealizarEncuestaController extends Controller
     {
         //
         $encuesta = new Pregunta;
-        return view('admin.encuestas.create-encuesta', compact('encuesta'));
+        return view('admin.encuestas.create-encuesta-cerrada', compact('encuesta'));
     }
 
     /**
