@@ -16,14 +16,16 @@
 			<label class="checkbox-inline"><input type="radio" name="estado" value="0">Inactivo</label>
 	  	</div>
 	  	<div class="form-inline">
-			<label for="opcion1">Opcion o respuesta</label><br>
+			<label for="opcion1">Pregunta</label><br>
 			<label for="imagen1">
 				<img id="imgSalida" src="https://openclipart.org/image/2400px/svg_to_png/190958/1392495957.png" width="25" height="25"/>
 			</label>
-			<input type="text" name="opcion1" id="opcion1" class="form-control" placeholder="Respuesta"  required/>
+			<input type="text" name="opcion1" id="opcion1" class="form-control" placeholder="Pregunta"  required/>
 			<input name="imagen1" id="imagen1" type="file" style="display: none;" />
 		</div>
-
+		<div class="form-group">
+			<input type="text" name="tipo_encuesta" value="cerrada" class="form-control" style="display: none;">
+		</div>
 	</div>
 	<script>
 		var e = 1;

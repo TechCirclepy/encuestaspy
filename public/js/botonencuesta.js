@@ -2,14 +2,14 @@
 function addPregunta(e) {
 	var pregunta = $(
 		'<div class="form-inline clase_'+e+'">'+
-			'<label for="opcion1">Opcion o respuesta</label><br>'+
+			'<label for="opcion1">Pregunta</label><br>'+
 			'<label for="imagen'+e+'">'+
 				'<img id="imgSalida_'+e+'" src="https://openclipart.org/image/2400px/'+
 				'svg_to_png/190958/1392495957.png"'+
 				'width="25" height="25"/>'+
 			'</label>'+
 			'<input id="opcion'+e+'" type="text" name="opcion'+e+'"'+
-			'class="form-control" placeholder="Respuesta"  required />' +
+			'class="form-control" placeholder="Pregunta"  required />' +
 			'<input name="imagen'+e+'" id="imagen'+e+'" type="file"'+
 			'style="display: none;" />'+
 		'</div>'
@@ -17,15 +17,19 @@ function addPregunta(e) {
 	//muestra los check para la previzualizacion
 	var preview = $(
 		'<div id="check'+e+'">'+
-			'<br>'+
+			'<div style="padding: 5px;"></div>'+
 			'<label class="checkbox-inline">'+
 				'<img id="foto'+e+'" src="https://openclipart.org/image/2400px/'+
 				'svg_to_png/190958/1392495957.png" width="25" height="25">'+
 				'<strong id="pregunta'+e+'"></strong>'+
 			'</label>'+
-			'<br>'+
-			'<label class="checkbox-inline"><input type="radio" value="1">SI</label>'+
-			'<label class="checkbox-inline"><input type="radio" value="0">NO</label>'+
+			'<div style="padding: 5px;"></div>'+
+			'<label class="checkbox-inline cerrada"><input type="radio" value="1">SI</label>'+
+			'<label class="checkbox-inline cerrada"><input type="radio" value="0">NO</label>'+
+			'<label class="checkbox-inline abierta"><input type="radio" value="1">SI</label>'+
+			'<label class="checkbox-inline abierta"><input type="radio" value="0">NO</label>'+
+			'<label class="checkbox-inline abierta"><input type="radio" value="0">PUEDE SER</label>'+
+			'<input type="text" class="form-control resp_abierta" placeholder="responder">'+
 		'</div>'
 		);
 	if (e >= 10 ){
@@ -33,6 +37,17 @@ function addPregunta(e) {
 	} else {
 		$(".contenedor").append(pregunta);
 		$("#respuestas").append(preview);
+	}
+
+	if (tipo_encuesta == 'cerrada') {
+		$('.abierta').remove();
+		$('.resp_abierta').remove();
+	} else if (tipo_encuesta == 'abierta') {
+		$('.cerrada').remove();
+		$('.resp_abierta').remove();
+	} else if (tipo_encuesta == 'resp_abierta') {
+		$('.abierta').remove();
+		$('.cerrada').remove();
 	}
 }
 //funcion para cambiar la imagen de las opciones

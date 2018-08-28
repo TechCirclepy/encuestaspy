@@ -16,7 +16,7 @@ class RealizarEncuestaController extends Controller
     public function index()
     {
         //
-        return view('admin.encuestas.index');
+        return view('admin.encuestas.index', compact('cerrada'));
     }
 
     /**
@@ -132,6 +132,7 @@ class RealizarEncuestaController extends Controller
                 ->save(public_path().'/imagenes/encuestas/' . $file->getClientOriginalName());
             $encuesta->imagen10=$file->getClientOriginalName();
         }
+        $encuesta->tipo_encuesta = $request->tipo_encuesta;
 
         if($encuesta -> save()){
             return redirect("/crear-encuesta");
