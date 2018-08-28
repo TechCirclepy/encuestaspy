@@ -24,7 +24,7 @@
 			<input name="imagen1" id="imagen1" type="file" style="display: none;" />
 		</div>
 		<div class="form-group">
-			<input type="text" name="tipo_encuesta" value="cerrada" class="form-control" style="display: none;">
+			<input type="text" name="tipo_encuesta" value="<?php echo $tipo_encuesta; ?>" class="form-control" style="display: none;">
 		</div>
 	</div>
 	<script>
