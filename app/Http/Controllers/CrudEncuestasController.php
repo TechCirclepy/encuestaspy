@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Image;
+use App\User;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Pregunta;
+use Illuminate\Support\Facades\Auth;
 class CrudEncuestasController extends Controller
 {
     /**
@@ -168,7 +171,7 @@ class CrudEncuestasController extends Controller
         $encuesta->tipo_encuesta = $request->tipo_encuesta;
 
         if($encuesta -> save()){
-            return redirect("/crear-encuesta");
+            return redirect("/encuestas");
         }else{
             return redirect("/crear-encuesta/create");
         }
