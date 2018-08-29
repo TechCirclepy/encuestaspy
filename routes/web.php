@@ -20,4 +20,5 @@ Route::get('/admin', 'AdminController@index');
 Route::resource('/empresas', 'CargaEmpresaController');
 Route::resource('cambiar-pass','CambiarPassEmpresaController');
 Route::resource('crear-encuesta','RealizarEncuestaController');
+Route::resource('encuestas', 'CrudEncuestasController');
 

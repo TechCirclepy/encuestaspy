@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Image;
-use Illuminate\Support\Facades\Input;
+
 use Illuminate\Http\Request;
 use App\Pregunta;
-use Illuminate\Support\Facades\Auth;
-class RealizarEncuestaController extends Controller
+class CrudEncuestasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,8 @@ class RealizarEncuestaController extends Controller
     public function index()
     {
         //
-        return view('admin.encuestas.index', compact('cerrada'));
+        $encuestas = Pregunta::all();
+        return view('admin.encuestas.crud-encuestas', compact('encuestas'));
     }
 
     /**
@@ -27,8 +26,6 @@ class RealizarEncuestaController extends Controller
     public function create()
     {
         //
-        $encuesta = new Pregunta;
-        return view('admin.encuestas.create-encuesta', compact('encuesta'));
     }
 
     /**
@@ -40,7 +37,43 @@ class RealizarEncuestaController extends Controller
     public function store(Request $request)
     {
         //
-        $encuesta = new Pregunta;
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+        $encuesta = Pregunta::find($id);
+        return view("admin.encuestas.edit-encuesta", compact('encuesta'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+        $encuesta = Pregunta::find($id);
         $encuesta->titulo = $request->titulo;
         $encuesta->fecha_finalizacion = $request->fecha_finalizacion;
         if(Input::hasFile('foto')) {
@@ -143,40 +176,6 @@ class RealizarEncuestaController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -185,5 +184,13 @@ class RealizarEncuestaController extends Controller
     public function destroy($id)
     {
         //
+        $encuesta=Pregunta::findOrFail($id);
+            if($encuesta->estado==1){
+                $encuesta->estado="0";
+            }else{
+                $encuesta->estado="1";
+            }
+        $encuesta->update();
+        return redirect('/encuestas');
     }
 }

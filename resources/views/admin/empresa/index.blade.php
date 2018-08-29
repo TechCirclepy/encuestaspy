@@ -34,7 +34,7 @@
   @include('admin.empresa.search')            
   <table class="table table-striped">
     <thead>
-      <tr>
+      <tr style="white-space: nowrap;">
         <th>#</th>
         <th>Nombre</th>
         <th>Email</th>
@@ -46,7 +46,7 @@
     </thead>
     <tbody>
     @foreach($empresas as $keyIndex => $empresa)
-      <tr>
+      <tr style="white-space: nowrap;">
         <td>{{$keyIndex+1}}</td>
         <td>{{$empresa->name}}</td>
         <td>{{$empresa->email}}</td>
@@ -63,8 +63,9 @@
           @endif
         </td>
       </tr>
-      @include('admin.empresa.modal')
+      
       @endforeach
+      @include('admin.empresa.modal')
     </tbody>
   </table>
   {{ $empresas->links() }}

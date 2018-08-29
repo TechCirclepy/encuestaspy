@@ -14,7 +14,7 @@ function addPregunta(e) {
 			'style="display: none;" />'+
 		'</div>'
 		);
-	//muestra los check para la previzualizacion
+	//muestra los input para la previzualizacion
 	var preview = $(
 		'<div id="check'+e+'">'+
 			'<div style="padding: 5px;"></div>'+
@@ -50,7 +50,7 @@ function addPregunta(e) {
 		$('.cerrada').remove();
 	}
 }
-//funcion para cambiar la imagen de las opciones
+//funcion para cambiar y previzaulizar la imagen de las opciones en crear encuesta
 function addImagen(e) {
   $(function() {
   $('#imagen'+e+'').change(function(x) {

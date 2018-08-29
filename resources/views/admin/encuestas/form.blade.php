@@ -7,12 +7,19 @@
 	  	</div>
 	  	<div class="form-group">
 	    	<label for="fecha_finalizacion">Fecha de finalizacion</label>
-	    	<input type="date" class="form-control" name="fecha_finalizacion" id="fecha_finalizacion" required>
+	    	<input type="datetime-local" class="form-control" name="fecha_finalizacion" id="fecha_finalizacion" required>
 	  	</div>
+	  	<div class="form-group">
+				<label for="foto">Portada</label><br>
+				<input id="foto" type="file" name="foto" class="form-control" accept="image/jpeg, image/png, image/bmp" style="display: none;">
+				<label for="foto">
+					<img id="portada" src="https://openclipart.org/image/2400px/svg_to_png/190958/1392495957.png" class="img-responsive" alt="" style="width: 100px;"/>
+				</label>
+			</div>
 	  	<div class="form-group">
 		  	<label for="">Estado de la encuesta</label>
 		  	<br>
-		   	<label class="checkbox-inline"><input type="radio" name="estado" value="1">Activo</label>
+		   	<label class="checkbox-inline"><input type="radio" checked name="estado" value="1">Activo</label>
 			<label class="checkbox-inline"><input type="radio" name="estado" value="0">Inactivo</label>
 	  	</div>
 	  	<div class="form-inline">
