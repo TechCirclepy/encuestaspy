@@ -29,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('admin') }}">
-                        EncuestasPY
+                    <a class="navbar-brand" href="{{ url('encuestaspy') }}">
+                        EncuestasPy
                     </a>
                 </div>
 
@@ -79,8 +79,5 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{{ asset('js/botonencuesta.js') }}"></script>
-    <script src="{{ asset('js/preview.js') }}"></script>
-    <script src="{{ asset('js/previzualizacion.js') }}"></script>
 </body>
 </html>

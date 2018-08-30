@@ -17,8 +17,15 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index');
+/*admin controllers*/
 Route::resource('/empresas', 'CargaEmpresaController');
 Route::resource('cambiar-pass','CambiarPassEmpresaController');
 Route::resource('crear-encuesta','RealizarEncuestaController');
 Route::resource('encuestas', 'CrudEncuestasController');
+/*end admin controllers*/
+
+/*users controllers */
+Route::resource('encuestaspy', 'Users\EmpresaController');
+Route::resource('encuestaspy/participar', 'Users\EncuestaController');
+/*end users controllers*/
 
