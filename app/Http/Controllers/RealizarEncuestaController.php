@@ -42,6 +42,7 @@ class RealizarEncuestaController extends Controller
         //
         $encuesta = new Pregunta;
         $encuesta->titulo = $request->titulo;
+        $encuesta->subtitulo = $request->subtitulo;
         $encuesta->fecha_finalizacion = $request->fecha_finalizacion;
         if(Input::hasFile('foto')) {
             $file=Input::file('foto');
@@ -52,7 +53,7 @@ class RealizarEncuestaController extends Controller
         }
         $encuesta->estado = $request->estado;
         $encuesta->user_id = Auth::user()->id;
-        $encuesta->opcion10 = $request->opcion1;
+        $encuesta->opcion1 = $request->opcion1;
         $encuesta->opcion2 = $request->opcion2;
         $encuesta->opcion3 = $request->opcion3;
         $encuesta->opcion4 = $request->opcion4;

@@ -59,6 +59,7 @@
 				<input type="text" class="form-control" placeholder="responder">
 			</div>
 		@endif
+		
 	</div>
 </div>
 @endsection

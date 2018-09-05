@@ -1,42 +1,57 @@
 //funcion para agregar nuevos input donde la variable "e" es el id
 function addPregunta(e) {
+	var pregDinamica = $(
+						'<div class="form-inline">'+
+							'<label for="opcion1">posible respuesta '+e+'</label><br>'+
+							'<label for="imagen'+e+'">'+
+								'<img id="imgSalida_'+e+'" '+
+								'src="http://pngimages.net/sites/default/files/add-a-'+
+								'picture-png-image-15339.png" width="25" height="25"/>'+
+							'</label>'+
+							'<input type="text" name="opcion'+e+'" class="form-control">'+
+							'<input name="imagen'+e+'" id="imagen'+e+'" type="file" style="display: none;"/>'+
+						'</div>');
 	var pregunta = $(
-		'<div class="form-inline clase_'+e+'">'+
-			'<label for="opcion1">Pregunta</label><br>'+
-			'<label for="imagen'+e+'">'+
-				'<img id="imgSalida_'+e+'" src="https://openclipart.org/image/2400px/'+
-				'svg_to_png/190958/1392495957.png"'+
-				'width="25" height="25"/>'+
-			'</label>'+
-			'<input id="opcion'+e+'" type="text" name="opcion'+e+'"'+
-			'class="form-control" placeholder="Pregunta"  required />' +
-			'<input name="imagen'+e+'" id="imagen'+e+'" type="file"'+
-			'style="display: none;" />'+
-		'</div>'
-		);
+					'<div class="form-inline clase_'+e+'">'+
+						'<label for="opcion1">Pregunta</label><br>'+
+						'<label for="imagen'+e+'">'+
+							'<img id="imgSalida_'+e+'" src="https://openclipart.org/image/2400px/'+
+							'svg_to_png/190958/1392495957.png"'+
+							'width="25" height="25"/>'+
+						'</label>'+
+						'<input id="opcion'+e+'" type="text" name="opcion'+e+'"'+
+						'class="form-control" placeholder="Pregunta"  required />' +
+						'<input name="imagen'+e+'" id="imagen'+e+'" type="file"'+
+						'style="display: none;" />'+
+					'</div>'
+					);
 	//muestra los input para la previzualizacion
 	var preview = $(
-		'<div id="check'+e+'">'+
-			'<div style="padding: 5px;"></div>'+
-			'<label class="checkbox-inline">'+
-				'<img id="foto'+e+'" src="https://openclipart.org/image/2400px/'+
-				'svg_to_png/190958/1392495957.png" width="25" height="25">'+
-				'<strong id="pregunta'+e+'"></strong>'+
-			'</label>'+
-			'<div style="padding: 5px;"></div>'+
-			'<label class="checkbox-inline cerrada"><input type="radio" value="1">SI</label>'+
-			'<label class="checkbox-inline cerrada"><input type="radio" value="0">NO</label>'+
-			'<label class="checkbox-inline abierta"><input type="radio" value="1">SI</label>'+
-			'<label class="checkbox-inline abierta"><input type="radio" value="0">NO</label>'+
-			'<label class="checkbox-inline abierta"><input type="radio" value="0">PUEDE SER</label>'+
-			'<input type="text" class="form-control resp_abierta" placeholder="responder">'+
-		'</div>'
-		);
+					'<div id="check'+e+'">'+
+						'<div style="padding: 5px;"></div>'+
+						'<label class="checkbox-inline">'+
+							'<img id="foto'+e+'" src="https://openclipart.org/image/2400px/'+
+							'svg_to_png/190958/1392495957.png" width="25" height="25">'+
+							'<strong id="pregunta'+e+'"></strong>'+
+						'</label>'+
+						'<div style="padding: 5px;"></div>'+
+						'<label class="checkbox-inline cerrada"><input type="radio" value="1">SI</label>'+
+						'<label class="checkbox-inline cerrada"><input type="radio" value="0">NO</label>'+
+						'<label class="checkbox-inline abierta"><input type="radio" value="1">SI</label>'+
+						'<label class="checkbox-inline abierta"><input type="radio" value="0">NO</label>'+
+						'<label class="checkbox-inline abierta"><input type="radio" value="0">PUEDE SER</label>'+
+						'<input type="text" class="form-control resp_abierta" placeholder="responder">'+
+					'</div>'
+					);
 	if (e >= 10 ){
 
 	} else {
-		$(".contenedor").append(pregunta);
-		$("#respuestas").append(preview);
+		if (tipo_encuesta == 'dinamica') {
+			$(".contenedor").append(pregDinamica);
+		} else {
+			$(".contenedor").append(pregunta);
+			$("#respuestas").append(preview);
+		}	
 	}
 
 	if (tipo_encuesta == 'cerrada') {
