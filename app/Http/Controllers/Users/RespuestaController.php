@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Users;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
 use App\Pregunta;
-class EmpresaController extends Controller
+use App\Respuesta;
+use Illuminate\Support\Facades\Auth;
+class RespuestaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,6 @@ class EmpresaController extends Controller
     public function index()
     {
         //
-        $empresas = User::all();
-        return view('user.empresa.index', compact('empresas'));
     }
 
     /**
@@ -28,6 +27,9 @@ class EmpresaController extends Controller
     public function create()
     {
         //
+        $preguntas = Pregunta::all();
+        $respuesta = new Respuesta;
+        return view('user.respuesta.respuesta', compact('preguntas', 'respuesta'));
     }
 
     /**
@@ -39,6 +41,26 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
         //
+        $respuesta = new Respuesta;
+        $respuesta->respuesta1 = $request->respuesta1;
+        $respuesta->respuesta2 = $request->respuesta2;
+        $respuesta->respuesta3 = $request->respuesta3;
+        $respuesta->respuesta4 = $request->respuesta4;
+        $respuesta->respuesta5 = $request->respuesta5;
+        $respuesta->respuesta6 = $request->respuesta6;
+        $respuesta->respuesta7 = $request->respuesta7;
+        $respuesta->respuesta8 = $request->respuesta8;
+        $respuesta->respuesta9 = $request->respuesta9;
+        $respuesta->respuesta10 = $request->respuesta10;
+        $respuesta->idpregunta = $request->idpregunta;
+        $respuesta->user_id = Auth::user()->id;
+
+        if ($respuesta->save()) {
+            return redirect('/');
+        } else {
+            return view('user.respuesta.respuesta');
+        }
+
     }
 
     /**
@@ -50,9 +72,6 @@ class EmpresaController extends Controller
     public function show($id)
     {
         //
-        $empresa = User::find($id);
-        $preguntas = Pregunta::all();
-        return view('user.empresa.emp-encuestas', compact('empresa', 'preguntas'));
     }
 
     /**

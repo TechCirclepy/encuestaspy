@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
+});
+Route::get('/', function () {
+    return redirect('encuestaspy');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,6 +29,6 @@ Route::resource('encuestas', 'CrudEncuestasController');
 
 /*users controllers */
 Route::resource('encuestaspy', 'Users\EmpresaController');
-Route::resource('encuestaspy/participar', 'Users\EncuestaController');
+Route::resource('encuestaspy/participar', 'Users\RespuestaController');
 /*end users controllers*/
 

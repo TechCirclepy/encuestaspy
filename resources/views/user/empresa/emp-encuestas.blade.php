@@ -11,7 +11,7 @@
 				@if($pregunta->estado == 1 )
 					<div class="col-sm-3 col-xs-6">
 						<div style="padding: 10px;"></div>
-		                <a href="{{url('encuestaspy/participar',array($pregunta->id_pregunta))}}">
+		                <a href="{{ url('encuestaspy/participar/create?id'.$pregunta->id_pregunta) }}">
 		                	@if(empty($pregunta->foto))
 		                		<img class="img-responsive portfolio-item" width="300" src="http://placehold.it/500x300" alt="">
 		                	@else
