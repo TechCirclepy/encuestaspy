@@ -44,6 +44,26 @@ $(document).ready(function(){
       $('#portada').attr("src",result);
      }
   });
+ $(function() {
+  $('#port').change(function(x) {
+      addImage(x); 
+     });
+     function addImage(x){
+      var file = x.target.files[0],
+      imageType = /image.*/;
+    
+      if (!file.type.match(imageType))
+       return;
+  
+      var reader = new FileReader();
+      reader.onload = fileOnload;
+      reader.readAsDataURL(file);
+     }
+     function fileOnload(x) {
+      var result=x.target.result;
+      $('#port_salida').attr("src",result);
+     }
+  });
 
 var i;
 // sacamos las funciones hacia afuera del docready

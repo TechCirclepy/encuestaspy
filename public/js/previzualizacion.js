@@ -1,5 +1,8 @@
 
 //revizualizacion a optimizar
+$(document).on('change keyup', '#subtitulo', function(e){
+    $('#result_subtitulo').html( $(this).val() );
+});
 $(document).on('change keyup', '#titulo', function(e){
     $('#resultado').html( $(this).val() );
 });

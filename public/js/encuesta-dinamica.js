@@ -1,0 +1,122 @@
+$(document).ready(function(){
+	$('.opcion1').click(function(){
+		document.getElementById("respuesta1").value = document.getElementById("opcion1").value;
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion2').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = document.getElementById("opcion2").value;
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion3').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = document.getElementById("opcion3").value;
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion4').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = document.getElementById("opcion4").value;
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion5').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = document.getElementById("opcion5").value;
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion6').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = document.getElementById("opcion6").value;
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion7').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = document.getElementById("opcion7").value;
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion8').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = document.getElementById("opcion8").value;
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion9').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = document.getElementById("opcion9").value;
+		document.getElementById("respuesta10").value = "";
+	});
+	$('.opcion10').click(function(){
+		document.getElementById("respuesta1").value = "";
+		document.getElementById("respuesta2").value = "";
+		document.getElementById("respuesta3").value = "";
+		document.getElementById("respuesta4").value = "";
+		document.getElementById("respuesta5").value = "";
+		document.getElementById("respuesta6").value = "";
+		document.getElementById("respuesta7").value = "";
+		document.getElementById("respuesta8").value = "";
+		document.getElementById("respuesta9").value = "";
+		document.getElementById("respuesta10").value = document.getElementById("opcion10").value;
+	});
+});

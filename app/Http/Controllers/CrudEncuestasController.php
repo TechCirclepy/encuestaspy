@@ -168,7 +168,6 @@ class CrudEncuestasController extends Controller
                 ->save(public_path().'/imagenes/encuestas/' . $file->getClientOriginalName());
             $encuesta->imagen10=$file->getClientOriginalName();
         }
-        $encuesta->tipo_encuesta = $request->tipo_encuesta;
 
         if($encuesta -> save()){
             return redirect("/encuestas");
