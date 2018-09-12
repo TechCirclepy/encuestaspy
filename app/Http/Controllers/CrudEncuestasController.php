@@ -170,7 +170,7 @@ class CrudEncuestasController extends Controller
         }
 
         if($encuesta -> save()){
-            return redirect("/encuestas");
+            return redirect("/encuestas")->with('editEncuesta', 'Empresa agregada correctamente!');
         }else{
             return redirect("/crear-encuesta/create");
         }

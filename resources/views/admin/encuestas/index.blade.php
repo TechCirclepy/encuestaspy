@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+@include('admin.encuestas.mensajes')
 @if (Auth::user()->activo==0)
 	<div class="container">
 		<h1>Ups! ya no tienes acceso al sistema.. ponte en contacto con el administrador</h1>

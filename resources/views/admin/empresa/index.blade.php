@@ -81,12 +81,6 @@
         <div class="col-12 d-flex no-block align-items-center">
             <h4 class="page-title">Listado de empresas</h4>
             <div class="ml-auto text-right">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Library</li>
-                    </ol>
-                </nav>
             </div>
         </div>
     </div>
@@ -154,10 +148,11 @@
     </div>
 </div>
 @endif
+@include('admin.empresa.mensajes')
 <script src="{{asset('admin/assets/libs/jquery/dist/jquery.min.js')}}"></script>
-<!-- this page js -->
+<!-- this page js 
 <script src="{{asset('admin/assets/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
-<script src="{{asset('admin/assets/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
+<script src="{{asset('admin/assets/extra-libs/multicheck/jquery.multicheck.js')}}"></script>-->
 <script src="{{asset('admin/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
 <script>
   $('#zero_config').DataTable();

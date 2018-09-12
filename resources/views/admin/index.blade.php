@@ -9,6 +9,7 @@
 		<h1>El usuario es un cliente</h1>
 	</div>
 @else
+
 <div class="container-fluid">            
     <div class="row">
         <div class="col-md-6 col-lg-4 col-xlg-3">

@@ -252,6 +252,7 @@
     <script src="{{ asset('js/botonencuesta.js') }}"></script>
     <script src="{{ asset('js/preview.js') }}"></script>
     <script src="{{ asset('js/previzualizacion.js') }}"></script>
+    <script src="{{ asset('js/notify.min.js') }}"></script>
 </body>
 
 </html>

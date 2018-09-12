@@ -136,7 +136,7 @@ class RealizarEncuestaController extends Controller
         $encuesta->tipo_encuesta = $request->tipo_encuesta;
 
         if($encuesta -> save()){
-            return redirect("/crear-encuesta");
+            return redirect("/crear-encuesta")->with('addEncuesta', 'Empresa agregada correctamente!');
         }else{
             return redirect("/crear-encuesta/create");
         }

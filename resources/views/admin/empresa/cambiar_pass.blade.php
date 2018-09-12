@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+@include('admin.empresa.mensajes')
 <div class="container-fluid">
  	<div class="row">
         <div class="col-md-12">
@@ -27,17 +28,7 @@
                             <a href="{{url('empresas')}}" class="btn btn-success">Volver</a>
                         </div>
                     </div>
-                    @if (count($errors)>0)
-					<div class="alert alert-danger">
-						<ul>
-							@foreach ($errors->all() as $error)
-								<li>
-									{{$error}}
-								</li>
-							@endforeach
-						</ul>
-					</div>
-					@endif
+                    
                 {!!Form::close()!!}
             </div>
         </div>

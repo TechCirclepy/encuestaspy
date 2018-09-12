@@ -11,5 +11,6 @@
 		@include('admin.encuestas.form', ['encuesta' => $encuesta, 'url' => '/crear-encuesta', 'method' => 'POST'])
 		@include('admin.encuestas.tipo-preview')
 	</div>
+	<button class="btn btn-danger" id="prueba">Click</button>
 </div>
 @endsection

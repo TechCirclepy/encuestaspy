@@ -7,33 +7,33 @@
                     <div class="card-body">
                         <h4 class="card-title">Agregar Empresa</h4>
                         <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nombre</label>
+                            <label for="" class="col-sm-3 text-right control-label col-form-label">Nombre</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="fname" name="name" placeholder="Nombre de la empresa" required>
+                                <input type="text" class="form-control" name="name" placeholder="Nombre de la empresa" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">Email</label>
+                            <label  class="col-sm-3 text-right control-label col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="lname" name="email" placeholder="Email de la empresa" required>
+                                <input type="email" class="form-control" name="email" placeholder="Email de la empresa" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">Contraseña</label>
+                            <label  class="col-sm-3 text-right control-label col-form-label">Contraseña</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="lname" name="password" placeholder="******" required>
+                                <input type="password" class="form-control" name="password" placeholder="******" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">Confirmar Contraseña</label>
+                            <label  class="col-sm-3 text-right control-label col-form-label">Confirmar Contraseña</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="lname" name="password_confirmation" placeholder="******" required>
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="******" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">Telefono</label>
+                            <label  class="col-sm-3 text-right control-label col-form-label">Telefono</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="telefono" id="lname" placeholder="Telefono de la empresa" id="telefono" required>
+                                <input type="text" class="form-control" name="telefono" placeholder="Telefono de la empresa" id="telefono" required>
                             </div>
                         </div>
                         <div class="form-group row">

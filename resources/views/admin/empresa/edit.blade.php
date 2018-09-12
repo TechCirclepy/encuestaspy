@@ -1,5 +1,6 @@
 @extends("layouts.admin")
 @section("content")
+@include('admin.empresa.mensajes')
  <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -23,7 +24,7 @@
                         <div class="form-group row">
                             <label for="lname" class="col-sm-3 text-right control-label col-form-label">Telefono</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="telefono" id="lname" value="{{$empresa->telefono}}" id="telefono">
+                                <input type="text" class="form-control" name="telefono" id="lname" value="{{$empresa->telefono}}" id="telefono" required>
                             </div>
                         </div>
                         <div class="form-group row">

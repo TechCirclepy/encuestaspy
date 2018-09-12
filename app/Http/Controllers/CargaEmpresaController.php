@@ -64,7 +64,7 @@ class CargaEmpresaController extends Controller
         }
 
         if($empresa -> save()){
-            return redirect("/empresas");
+            return redirect("/empresas")->with('addEmpresa', 'Empresa agregada correctamente!');
         }else{
             return view("admin.empresa.create", ["empresa" => $empresa]);
         }

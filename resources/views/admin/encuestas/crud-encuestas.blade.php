@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 @include('admin.encuestas.tipo-encuesta')
+@include('admin.encuestas.mensajes')
 <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/extra-libs/multicheck/multicheck.css')}}">
 <link href="{{asset('admin/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 <link href="{{asset('admin/dist/css/style.min.css')}}" rel="stylesheet">
