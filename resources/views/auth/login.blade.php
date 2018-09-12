@@ -1,75 +1,72 @@
-@extends('layouts.app')
+@extends('auth.base')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-                 
-                        <div class="form-group{{ $errors->has('email') || $errors->has('telefono') ? ' has-error' : '' }}">
-                            <label for="telefono" class="col-md-4 control-label">E-Mail o Telefono</label>
-
-                            <div class="col-md-6">
-                                <input id="telefono" type="text" class="form-control" name="telefono" value="{{ old('telefono') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-
-                                @if ($errors->has('telefono'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
-                                    </span>
-                                @endif
+<div class="auth-box bg-dark border-top border-secondary">
+    <div id="loginform">
+        <div class="text-center p-t-20 p-b-20">
+            <span class="db"><img src="{{asset('admin/assets/images/logo.png')}}" alt="logo" /></span>
+        </div>
+        <!-- Form -->
+        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+        {{ csrf_field() }}
+            <div class="form-group{{ $errors->has('email') || $errors->has('telefono') ? ' has-error' : '' }}">
+                <div class="row p-b-30">
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                             </div>
+                            <input placeholder="Telefono o email" id="telefono" type="text" class="form-control form-control-lg" name="telefono" value="{{ old('telefono') }}" required autofocus>
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
+
+                            @if ($errors->has('telefono'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('telefono') }}</strong>
+                                </span>
+                            @endif
                         </div>
-                      
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                 </div>
+                                    <input placeholder="Contraseña" id="password" type="password" class="form-control form-control-lg" name="password" aria-label="Password" aria-describedby="basic-addon1" required="" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif 
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="checkbox" name="remember"{{ old('remember') ? 'checked' : '' }}>
+                                <label for=""><b class="text-info">Recuerdame</b></label>  
                             </div>
                         </div>
-
+                    </div>
+                </div>
+                <div class="row border-top border-secondary">
+                    <div class="col-12">
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
+                            <div class="p-t-20">
+                                <a class="btn btn-info" href="{{ route('password.request') }}">
+                                        <i class="fa fa-lock m-r-5"></i>
+                                        Olvidaste tu clave?
                                 </a>
+                                <button type="submit" class="btn btn-success float-right">
+                                        Ingresar
+                                    </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
+
 @endsection

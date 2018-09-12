@@ -1,87 +1,86 @@
-@extends('layouts.app')
-
+@extends('auth.base')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+<div class="auth-box bg-dark border-top border-secondary">
+        <div>
+        <div class="text-center p-t-20 p-b-20">
+            <span class="db"><img src="{{asset('admin/assets/images/logo.png')}}" alt="logo" /></span>
+        </div>
+        <!-- Form -->
+        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+            {{ csrf_field() }}
+            <div class="row p-b-30">
+                <div class="col-12">
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                         </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <input type="text" class="form-control form-control-lg" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" name="name" value="{{ old('name') }}" required autofocus>
+                        @if ($errors->has('name'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    </div>
+                    <!-- email -->
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <input type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="email" value="{{ old('email') }}" required>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    </div>
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="fa fa-lock"></i></span>
                         </div>
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
+                        <input id="password" type="password" class="form-control form-control-lg" name="password"  placeholder="Contraseña" required>
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="fa fa-lock"></i></span>
                         </div>
-                        <div class="form-group {{ $errors->has('telefono') ? ' has-error' : '' }}">
-                            <label for="telefono" class="col-md-4 control-label">Telefono</label>
-                            <div class="col-md-6">
-                                <input type="text" id="telefono" class="form-control" name="telefono" required value="{{ old('telefono') }}">
-                                @if ($errors->has('telefono'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <input id="password-confirm" type="password" class="form-control form-control-lg" placeholder="Confirmar contraseña" name="password_confirmation" required>
+                    </div>
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        <input type="text" class="form-control form-control-lg" placeholder="Telefono" aria-label="Password" aria-describedby="basic-addon1" name="telefono" required value="{{ old('telefono') }}">
+                        @if ($errors->has('telefono'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('telefono') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="row border-top border-secondary">
+                <div class="col-12">
+                    <div class="form-group">
+                        <div class="p-t-20">
+                            <button class="btn btn-block btn-lg btn-info" type="submit">Registrarme</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 @endsection

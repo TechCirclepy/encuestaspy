@@ -1,85 +1,93 @@
 //funcion para agregar nuevos input donde la variable "e" es el id
 function addPregunta(e) {
-	var pregDinamica = $(
-						'<div class="form-inline clase_'+e+'">'+
-							'<label for="opcion1">posible respuesta '+e+'</label><br>'+
-							'<label for="imagen'+e+'">'+
-								'<img id="imgSalida_'+e+'" '+
-								'src="http://pngimages.net/sites/default/files/add-a-'+
-								'picture-png-image-15339.png" width="25" height="25"/>'+
-							'</label>'+
-							'<input type="text" id="opcion'+e+'" name="opcion'+e+'" class="form-control">'+
-							'<input name="imagen'+e+'" id="imagen'+e+'" type="file" style="display: none;"/>'+
-						'</div>');
 	var pregunta = $(
-					'<div class="form-inline clase_'+e+'">'+
-						'<label for="opcion1">Pregunta</label><br>'+
-						'<label for="imagen'+e+'">'+
-							'<img id="imgSalida_'+e+'" '+
-							'src="http://pngimages.net/sites/default'+
-							'/files/add-a-picture-png-image-15339.png"'+
-							'width="25" height="25"/>'+
-						'</label>'+
-						'<input id="opcion'+e+'" type="text" name="opcion'+e+'"'+
-						'class="form-control" placeholder="Pregunta"  required />' +
-						'<input name="imagen'+e+'" id="imagen'+e+'" type="file"'+
-						'style="display: none;" />'+
-					'</div>'
-					);
-	//muestra los input para la previzualizacion
-	var preview = $(
-					'<div id="check'+e+'">'+
-						'<div style="padding: 5px;"></div>'+
-						'<label class="checkbox-inline">'+
-							'<img id="foto'+e+'" src="http://pngimages.net/'+
-							'sites/default/files/add-a-picture-png-image-15339.png"'+
-							'width="25" height="25">'+
-							'<strong id="pregunta'+e+'"></strong>'+
-						'</label>'+
-						'<div style="padding: 5px;"></div>'+
-						'<label class="checkbox-inline cerrada"><input type="radio" value="1">SI</label>'+
-						'<label class="checkbox-inline cerrada"><input type="radio" value="0">NO</label>'+
-						'<label class="checkbox-inline abierta"><input type="radio" value="1">SI</label>'+
-						'<label class="checkbox-inline abierta"><input type="radio" value="0">NO</label>'+
-						'<label class="checkbox-inline abierta"><input type="radio" value="0">PUEDE SER</label>'+
-						'<input type="text" class="form-control resp_abierta" placeholder="responder">'+
-					'</div>'
-					);
-	var prevDinamic = $('<div id="check'+e+'">'+
+					'<div class="form-inline row clase_'+e+'">'+
+						'<label for="imagen'+e+'" class="col-sm-3 text-right control-label col-form-label">'+
+							'Pregunta'+
 							'<div style="padding: 5px;"></div>'+
-							'<div class="form-inline">'+
-								'<label class="checkbox-inline">'+
-									'<img id="foto'+e+'" src="http://pngimages.net/sites'+
-									'/default/files/add-a-picture-png-image-15339.png"'+
-									' width="70" height="60">'+
-									'<input type="radio" name="respuesta">'+
-									'<strong id="pregunta'+e+'"></strong>'+
+							'<img id="imgSalida_'+e+'" src="http://pngimages.net/sites/default/files/'+
+							'add-a-picture-png-image-15339.png" width="25" height="25"/>'+
+						'</label>'+
+						'<div class="col-sm-9">'+
+							'<input type="text" name="opcion'+e+'" id="opcion'+e+'" class="form-control" '+
+							'placeholder="Pregunta '+e+'" required>'+
+							'<input name="imagen'+e+'" id="imagen'+e+'" type="file" style="display: none;" />'+
+						'</div>'+
+					'</div>');
+
+	var preview = $(
+					'<div class="form-group row" id="check'+e+'">'+
+						'<label class="col-sm-3 text-right control-label col-form-label">'+
+							'<img id="foto'+e+'" src="http://pngimages.net/sites/default/files/'+
+							'add-a-picture-png-image-15339.png" width="25" height="25">'+
+						'</label>'+
+						'<div class="col-sm-9">'+
+							'<strong id="pregunta'+e+'">Aqui va tu pregunta</strong><br>'+
+							'<label class="checkbox-inline cerrada"><input name="ejemplo" type="radio" value="1"'+
+							'>SI</label>'+
+							'<label class="checkbox-inline cerrada"><input name="ejemplo" type="radio" value="0"'+
+							'>NO</label>'+
+							'<label class="checkbox-inline abierta"><input name="ejemplo" type="radio" value="0"'+
+							'>Tal vez</label>'+
+							'<input type="text" class="form-control resp_abierta" name="ejemplo" id="ejemplo"'+
+							'required placeholder="Responder">'+
+						'</div>'+
+					'</div>'
+		);
+	var pregDinamica = $(
+						'<div class="form-inline row clase_'+e+'" >'+
+							'<label for="imagen'+e+'" class="col-sm-3 text-right control-label col-form-label">'+
+								'Respuesta<br>'+
+								'<div style="padding: 5px;"></div>'+
+								'<img id="imgSalida_'+e+'" src="http://pngimages.net/sites/default/files/'+
+								'add-a-picture-png-image-15339.png" width="25" height="25"/>'+
+							'</label>'+
+							'<div class="col-sm-9">'+
+								'<input type="text" name="opcion'+e+'" id="opcion'+e+'" class="form-control"'+
+								'placeholder="Escriba aqui su respuesta '+e+'" required>'+
+								'<input name="imagen'+e+'" id="imagen'+e+'" type="file" style="display: none;" /'+
 							'</div>'+
 						'</div>'
-						);
+		);
 
-	if (e >= 10 ){
+	var prevDinamic = $(
+						'<div class="form-inline row" id="check'+e+'">'+
+							'<label class="col-sm-3 text-right control-label col-form-label">'+
+								'<div style="padding-right: 60px;"></div>'+
+								'<img id="foto'+e+'" src="http://pngimages.net/sites/default/files/'+
+								'add-a-picture-png-image-15339.png" width="25" height="25">'+
+								'<div style="padding-right: 10px;"></div>'+
+								'<input type="radio" class="form-control" name="ejemplo" id="ejemplo"'+
+								'required placeholder="Responder">'+
+							'</label>'+
+							'<div class="col-sm-9">'+
+								'<strong id="pregunta'+e+'">Aqui va tu posible respuesta</strong>'+
+							'</div>'+
+						'</div>'
 
+		);
+	if (e >= 11 ){
+
+	} else if (tipo_encuesta == 'dinamica') {
+		$(".contenedor").append(pregDinamica);
+		$("#respuestas").append(prevDinamic);
 	} else {
-		if (tipo_encuesta == 'dinamica') {
-			$(".contenedor").append(pregDinamica);
-			$("#respuestas").append(prevDinamic);
-		} else {
-			$(".contenedor").append(pregunta);
-			$("#respuestas").append(preview);
-		}	
+		$(".contenedor").append(pregunta);
+		$("#respuestas").append(preview);	
 	}
 
 	if (tipo_encuesta == 'cerrada') {
 		$('.abierta').remove();
 		$('.resp_abierta').remove();
-	} else if (tipo_encuesta == 'abierta') {
-		$('.cerrada').remove();
-		$('.resp_abierta').remove();
 	} else if (tipo_encuesta == 'resp_abierta') {
 		$('.abierta').remove();
 		$('.cerrada').remove();
+
+	} else if (tipo_encuesta == 'abierta') {
+		$('.resp_abierta').remove();
 	}
+
+
 }
 //funcion para cambiar y previzaulizar la imagen de las opciones en crear encuesta
 function addImagen(e) {
@@ -111,7 +119,7 @@ e++;
 //validaciones para agregar y borrar opciones
 $(document).ready(function() {
 	$('#abrir').click(function () {
-		if (e >= 10) {
+		if (e >= 11) {
 			alert('Solo puede agregar 10 respuestas')
 		} else {
 	    	e++;
