@@ -21,6 +21,6 @@ Route::resource('encuestas', 'CrudEncuestasController');
 });
 /*users controllers */
 Route::resource('encuestaspy', 'Users\EmpresaController');
-Route::resource('encuestaspy/participar', 'Users\RespuestaController');
+Route::resource('encuestaspy/participar', 'Users\RespuestaController')->middleware('auth');
 /*end users controllers*/
 

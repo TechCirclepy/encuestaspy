@@ -4,7 +4,15 @@
 <div class="auth-box bg-dark border-top border-secondary">
     <div id="loginform">
         <div class="text-center p-t-20 p-b-20">
-            <span class="db"><img src="{{asset('admin/assets/images/logo.png')}}" alt="logo" /></span>
+            <span class="db"><!--<img src="{{asset('admin/assets/images/logo.png')}}" alt="logo" />-->
+                <div class="form-inline">
+                <img src="{{asset('admin/assets/images/logo-icon.png')}}" alt="homepage" class="light-logo" />
+                <div style="padding: 8px;"></div>
+                <h3 class="text-white text-center"><b>Encuestas PY</b></h3>
+                
+                </div>
+               
+            </span>
         </div>
         <!-- Form -->
         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -44,8 +52,9 @@
                             </div>
                             <div class="input-group mb-3">
                                 <input type="checkbox" name="remember"{{ old('remember') ? 'checked' : '' }}>
-                                <label for=""><b class="text-info">Recuerdame</b></label>  
-                            </div>
+                                <label for=""><b class="text-info">Recuerdame</b></label>
+                            </div><hr>
+                            <a href="{{ route('register') }}">Todavia no tienes una cuenta?</a>
                         </div>
                     </div>
                 </div>

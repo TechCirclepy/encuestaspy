@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Pregunta;
+
 class EmpresaController extends Controller
 {
     /**
@@ -17,7 +18,9 @@ class EmpresaController extends Controller
     {
         //
         $empresas = User::all();
-        return view('user.empresa.index', compact('empresas'));
+        $preguntas = Pregunta::all();
+        $count = "";
+        return view('user.empresa.index', compact('empresas', 'preguntas', 'count'));
     }
 
     /**

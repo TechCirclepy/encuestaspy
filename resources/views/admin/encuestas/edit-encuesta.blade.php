@@ -23,8 +23,8 @@
 	                    <div class="form-group row">
 	                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Estado</label>
 	                        <div class="col-sm-9">
-	                            <label class="radio-inline"><input id="activo" type="radio" name="estado" value="{{$encuesta->estado}}">Activo</label>
-						    	<label class="radio-inline"><input id="inactivo" type="radio" name="estado" value="{{$encuesta->estado}}">Inactivo</label>
+	                            <label class="checkbox-inline"><input id="activo" type="radio" checked name="estado" value="1">Activo</label>
+                        		<label class="checkbox-inline"><input id="inactivo" type="radio" name="estado" value="0">Inactivo</label>
 						    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 						    	@if ($encuesta->estado==1)
 						  			<script>
@@ -46,6 +46,14 @@
 								</label>
 	                        </div>
 	                    </div>
+	                    @if($encuesta->tipo_encuesta == 'dinamica')
+	                    <div class="form-group row">
+	                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Titulo principal</label>
+	                        <div class="col-sm-9">
+	                            <input type="text" class="form-control" name="subtitulo" id="subtitulo" value="{{$encuesta->subtitulo}}" required>
+	                        </div>
+	                    </div>
+	                    @endif
 	                    <div class="form-group row">
 	                        <label for="" class="col-sm-3 text-right control-label col-form-label">Pregunta 1</label>
 	                        <div class="col-sm-9">

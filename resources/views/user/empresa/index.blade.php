@@ -1,41 +1,44 @@
-@extends('layouts.app_user')
+@extends('layouts.user')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="row">
-                @foreach($empresas as $empresa)
+<section class="text-center mb-4">
+<div class="row wow fadeIn">
+  @foreach($empresas as $empresa)
+    @if($empresa->activo == 1)
+      <?php $count=0; ?>
+      @foreach($preguntas as $pregunta)
+        @if($empresa->id == $pregunta->user_id and $pregunta->estado == 1)
+          <?php $count+=1; ?>
+        @endif
+      @endforeach
+        <div class="col-lg-3 col-md-3 mb-3">
+          <div class="card">
+            <div class="view overlay">
+              @if(!empty($empresa->foto))
                 <a href="{{url('encuestaspy',array($empresa->id))}}">
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <img src="{{asset('imagenes/empresas/'.$empresa->foto)}}" height="320" width="150" alt="">
-                            <div class="caption">
-                                <h4><a href="#">{{$empresa->name}}</a>
-                                </h4>
-                                <p>pagina web <a target="_blank" href="http://www.bootsnipp.com">www.ejemplo.com</a>.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 encuestas</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </a>    
-                @endforeach
+                <img class="card-img-top" src="{{asset('imagenes/empresas/'.$empresa->foto)}}" height="200" width="300" alt="">
+                </a>
+              @else
+                <img src="{{asset('user/img/sample.jpg')}}" height="200" width="300" alt="">
+              @endif
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
             </div>
+            <div class="card-body text-center">
+              <h5>
+                <strong>
+                  <a id="link" href="{{url('encuestaspy',array($empresa->id))}}" class="dark-grey-text">{{$empresa->name}}
+                    @if($count != 0)
+                      <span class="badge badge-pill danger-color">{{$count}}</span>
+                    @endif
+                  </a>
+                </strong>
+              </h5>
+            </div>
+          </div>
         </div>
-        <div class="col-md-3">
-            <h1>Informaciones</h1>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, est maxime, magnam nemo tenetur unde deleniti eius eos doloribus, labore totam rerum debitis esse harum ut. Perspiciatis quasi unde eius.</span>
-            <span>Quas suscipit repudiandae neque odit enim, quasi, ullam voluptas adipisci possimus voluptates repellat est cum ut quibusdam, eaque at similique blanditiis perferendis temporibus. Voluptate quas aliquam odio, inventore harum explicabo.</span>
-            <span>Error inventore sed fuga modi nesciunt iste fugit incidunt rerum pariatur. Dolorem reiciendis dolor soluta totam commodi expedita fugiat a nihil dolore modi voluptate aperiam, laborum ex sint vero debitis.</span></p>
-        </div>
-    </div>
+    @endif
+  @endforeach
 </div>
+</section>
 @endsection

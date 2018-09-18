@@ -1,4 +1,4 @@
-@extends('layouts.app_user')
+@extends('layouts.user')
 @section('content')
 <?php
 $url= $_SERVER["REQUEST_URI"];

@@ -21,6 +21,7 @@
                                     <th>#</th>
                                     <th>Titulo</th>
                                     <th>Fecha finalizacion</th>
+                                    <th>Tipo de encuesta</th>
                                     <th>Portada</th>
                                     <th>Estado</th>
                                     <th>Creado por:</th>
@@ -33,6 +34,7 @@
                                     <td>{{$contador+1}}</td>
                                     <td>{{$encuesta->titulo}}</td>
                                     <td>{{$encuesta->fecha_finalizacion}}</td>
+                                    <td>{{$encuesta->tipo_encuesta}}</td>
                                     <td><img src="{{asset('imagenes/encuestas/'.$encuesta->foto)}}" class="img-responsive" style="width: 40px; height: 40px;"/></td>
                                     @if ($encuesta->estado == 0)
                                         <td>Inactivo</td>
@@ -41,14 +43,11 @@
                                     @endif
                                     <td>{{$encuesta->user_id}}</td>
                                     <td>
-                                      <a href="{{route('encuestas.edit',$encuesta->id_pregunta)}}" class="btn btn-warning">Editar</a>
-                                      @if ($encuesta->estado == 0)
-                                      <a href="" class="btn btn-success" data-target="#modal-delete-{{$encuesta->id}}" data-toggle="modal">Activar</a>
-                                      @else
-                                      <a href="" class="btn btn-danger" data-target="#modal-delete-{{$encuesta->id}}" data-toggle="modal">Desactivar</a>
-                                      @endif
+                                      <a href="{{route('encuestas.edit',$encuesta->id_pregunta)}}" class="btn btn-warning">Editar</a><!--
+                                      <a href="#" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Ver</a>-->
                                     </td>
                                 </tr>
+                                @include('admin.encuestas.ver-encuesta-modal')
                                 @include('admin.encuestas.modal-estado')
                                 @endforeach
                             </tbody>
@@ -57,6 +56,7 @@
                                     <th>#</th>
                                     <th>Titulo</th>
                                     <th>Fecha finalizacion</th>
+                                    <td>Tipo de encuesta</td>
                                     <th>Portada</th>
                                     <th>Estado</th>
                                     <th>Creado por:</th>
